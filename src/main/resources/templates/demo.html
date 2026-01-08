@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Demo Data</title>
+</head>
+<body>
+
+<h2>Saved Data</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+
+    <tr th:each="d : ${list}">
+        <td th:text="${d.id}"></td>
+        <td th:text="${d.name}"></td>
+        <td th:text="${d.age}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
