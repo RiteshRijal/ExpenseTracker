@@ -1,10 +1,10 @@
 package com.expensetracker.expenseTracker.configuration;
 
 import com.expensetracker.expenseTracker.model.DemoEntity;
+import com.expensetracker.expenseTracker.repository.DemoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.expensetracker.expenseTracker.repository.DemoRepository;
 
 @Configuration
 public class DemoConfiguration {
