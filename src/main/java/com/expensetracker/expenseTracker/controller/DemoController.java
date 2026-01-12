@@ -1,4 +1,4 @@
-package com.expensetracker.expenseTracker.Controller;
+package com.expensetracker.expenseTracker.controller;
 
 import com.expensetracker.expenseTracker.repository.DemoRepository;
 import org.springframework.stereotype.Controller;
