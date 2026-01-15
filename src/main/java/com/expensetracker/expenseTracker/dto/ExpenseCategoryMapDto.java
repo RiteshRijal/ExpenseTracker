@@ -1,10 +1,16 @@
 package com.expensetracker.expenseTracker.dto;
 
+import java.time.LocalDate;
+
 public class ExpenseCategoryMapDto extends AbstractProfileDto {
 
     private CategoryDto categoryDto;
 
     private ExpenseDto expenseDto;
+
+    private LocalDate boughtdate;
+
+
 
     private CategoryDto getCategoryDto(){
         if(categoryDto==null){

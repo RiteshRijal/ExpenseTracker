@@ -7,12 +7,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "CATEGORY")
+@Table(name = "ADMIN")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Category extends AbstractProfile {
+public class Admin extends AbstractEntity{
 
-    private String imageIconLocation;
+    public String adminId;
 
+    public String password;
+
+    public String phoneNo;
+
+    public String email;
+
+    public Long noOfAttempts;
+
+    public String oldPassword;
 }

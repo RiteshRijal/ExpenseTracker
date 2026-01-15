@@ -1,8 +1,13 @@
 package com.expensetracker.expenseTracker.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
-public abstract class AbstractDeletedByDto extends AbstractUpdatedByDto {
+@Getter
+@Setter
+public abstract class AbstractDeletedDetailDto extends AbstractUpdatedDetailDto {
 
     private Date deletedDate;
 
@@ -18,11 +23,4 @@ public abstract class AbstractDeletedByDto extends AbstractUpdatedByDto {
         return deletedTime;
     }
 
-    private void setDeletedTime(Date deletedTime){
-        this.deletedTime=deletedTime;
-    }
-
-    public void setDeletedDate(Date deletedDate){
-        this.deletedDate=deletedDate;
-    }
 }

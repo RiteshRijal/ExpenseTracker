@@ -4,7 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class DemoEntity {
     @Id
@@ -14,34 +18,4 @@ public class DemoEntity {
     private String name;
     private String age;
 
-    public Long getId(){
-        if(id==null){
-            id=0L;
-        }
-        return id;
-    }
-    public String getName(){
-        if(name==null){
-            name="";
-        }
-        return name;
-    }
-    public String getAge(){
-        if(age==null){
-            age="";
-        }
-        return age;
-    }
-
-    public void setId(Long id){
-        this.id=id;
-    }
-
-    public void setName(String name){
-        this.name=name;
-    }
-
-    public void setAge(String age){
-        this.age=age;
-    }
 }

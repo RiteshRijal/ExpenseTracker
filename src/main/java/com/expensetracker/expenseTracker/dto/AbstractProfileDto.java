@@ -1,6 +1,11 @@
 package com.expensetracker.expenseTracker.dto;
 
-public class AbstractProfileDto extends AbstractDeletedByDto {
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class AbstractProfileDto extends AbstractDeletedDetailDto {
 
     private String name;
 
@@ -8,7 +13,4 @@ public class AbstractProfileDto extends AbstractDeletedByDto {
         return name;
     }
 
-    public void setName(String name){
-        this.name=name;
-    }
 }
