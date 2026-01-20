@@ -33,8 +33,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Wait for MySQL
-        run: sleep 20
+      - name: Wait for MySQL to be ready
+        run: |
+          echo "Waiting for MySQL..."
+          for i in {1..30}; do
+            mysqladmin ping -h 127.0.0.1 -uroot -proot >/dev/null 2>&1 && break
+            echo "MySQL not ready yet... waiting 5s"
+            sleep 5
+          done
 
       - name: Build project
         run: mvn clean package -DskipTests
