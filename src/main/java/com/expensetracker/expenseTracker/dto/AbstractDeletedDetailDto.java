@@ -3,23 +3,23 @@ package com.expensetracker.expenseTracker.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 public abstract class AbstractDeletedDetailDto extends AbstractUpdatedDetailDto {
 
-    private Date deletedDate;
+    private LocalDate deletedDate;
 
-    private Date deletedTime;
+    private LocalDate deletedTime;
 
     private String deletedReason;
 
-    private Date getDeletedDate(){
+    private LocalDate getDeletedDate(){
         return deletedDate;
     }
 
-    private Date getDeletedTime(){
+    private LocalDate getDeletedTime(){
         return deletedTime;
     }
 

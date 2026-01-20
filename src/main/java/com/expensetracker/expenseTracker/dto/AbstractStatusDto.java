@@ -9,5 +9,5 @@ public abstract class AbstractStatusDto extends AbstractDto {
 
     protected AdminDto adminDto;
 
-    protected String statusDesc;
+    protected StatusTypeDto statusTypeDto;
 }

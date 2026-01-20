@@ -5,9 +5,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AdminDto {
+public class AdminDto extends AbstractDto{
 
     public String adminId;
+
+    public String firstName;
+
+    public String fullName;
+
+    public String middleName;
+
+    public String lastName;
+
+    public String age;
 
     public String password;
 
@@ -15,7 +25,7 @@ public class AdminDto {
 
     public String email;
 
-    public String noOfAttempts;
+    public Long noOfAttempts;
 
     public String oldPassword;
 

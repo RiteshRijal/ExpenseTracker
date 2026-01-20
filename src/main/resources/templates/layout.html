@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
+    <script defer th:src="@{/js/layout.js}"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">💰 Expense Tracker</div>
+    <form th:action="@{/logout}" method="post">
+        <button class="logout-btn">Logout</button>
+    </form>
+</header>
+
+<div class="container">
+
+    <nav class="sidebar">
+        <a th:href="@{/index}" class="nav-link active">Dashboard</a>
+        <a th:href="@{/expense}" class="nav-link">Expense</a>
+        <a th:href="@{/income}" class="nav-link">Income</a>
+        <a th:href="@{/balance}" class="nav-link">Balance</a>
+        <a th:href="@{/report}" class="nav-link">Reports</a>
+        <a th:href="@{/category}" class="nav-link">Category</a>
+    </nav>
+
+    <main class="content">
+        <div th:replace="${content}"></div>
+    </main>
+
+</div>
+
+<footer class="footer">
+    © Ritesh Rijal <span id="year"></span>
+</footer>
+
+</body>
+</html>

@@ -1,7 +1,6 @@
 package com.expensetracker.expenseTracker.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,5 +13,9 @@ import lombok.Setter;
 public class Category extends AbstractProfile {
 
     private String imageIconLocation;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CATEGORYTYPE_ID", nullable = false)
+    private CategoryType categoryType;
 
 }

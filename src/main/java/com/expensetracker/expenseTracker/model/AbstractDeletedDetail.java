@@ -4,16 +4,17 @@ import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @MappedSuperclass
 public abstract class AbstractDeletedDetail extends AbstractUpdatedDetail {
 
-    protected Date deletedDate;
+    protected LocalDate deletedDate;
 
-    protected Date deletedTime;
+    protected LocalDateTime deletedTime;
 
     protected String deletedReason;
     

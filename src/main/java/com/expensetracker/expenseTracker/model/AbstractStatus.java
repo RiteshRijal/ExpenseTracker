@@ -16,6 +16,8 @@ public abstract class AbstractStatus extends AbstractEntity {
     @JoinColumn(name = "Admin_ID", nullable = false)
     protected Admin admin;
 
-    protected String statusDesc;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "STATUS_TYPE_ID", nullable = false)
+    protected StatusType statusType;
 
 }

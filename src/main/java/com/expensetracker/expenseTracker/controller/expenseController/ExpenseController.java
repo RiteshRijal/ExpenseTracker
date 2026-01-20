@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Getter
 @Setter
 @Controller
-@RequestMapping("/expenses")
+@RequestMapping("/expense")
 public class ExpenseController {
 
     private final ExpenseService expenseService;
@@ -27,8 +27,9 @@ public class ExpenseController {
     // Show the form page
     @GetMapping()
     public String showForm(Model model) {
-        model.addAttribute("expense", new ExpenseDto());
-        return "expenses"; // Thymeleaf HTML file
+        model.addAttribute("content", "expense");
+        model.addAttribute("expense", new ExpenseDto()); // Thymeleaf HTML file
+        return "layout";
     }
 
     // Handle form submission
@@ -40,6 +41,12 @@ public class ExpenseController {
         } else {
             redirectAttributes.addFlashAttribute("message", "❌ Failed to save expense.");
         }
-        return "redirect:/expenses";
+        return "redirect:/expense";
     }
+
+    @GetMapping("/")
+    public String root() {
+        return "redirect:/index";
+    }
+
 }

@@ -9,8 +9,4 @@ public class AbstractProfileDto extends AbstractDeletedDetailDto {
 
     private String name;
 
-    private String getName(){
-        return name;
-    }
-
 }

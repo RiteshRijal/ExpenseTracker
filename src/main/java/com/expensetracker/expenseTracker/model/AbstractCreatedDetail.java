@@ -4,6 +4,8 @@ import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -11,11 +13,8 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class AbstractCreatedDetail extends AbstractStatus {
 
+    protected LocalDate createdDate;
 
-    protected Date createdDate;
-
-    protected Date createdTime;
-
-    protected String deletedReason;
+    protected LocalDateTime createdTime;
 
 }

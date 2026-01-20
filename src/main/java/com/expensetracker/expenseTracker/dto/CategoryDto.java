@@ -9,6 +9,8 @@ public class CategoryDto extends AbstractProfileDto{
 
     private String imageIconLocation;
 
+    private CategoryTypeDto categoryTypeDto;
+
     private String getImageIconLocation(){
         return imageIconLocation;
     }

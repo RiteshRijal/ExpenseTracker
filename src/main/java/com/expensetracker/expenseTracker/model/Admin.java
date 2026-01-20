@@ -15,6 +15,16 @@ public class Admin extends AbstractEntity{
 
     public String adminId;
 
+    public String firstName;
+
+    public String fullName;
+
+    public String middleName;
+
+    public String lastName;
+
+    public String age;
+
     public String password;
 
     public String phoneNo;
