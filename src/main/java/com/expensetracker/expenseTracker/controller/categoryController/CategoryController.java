@@ -21,37 +21,25 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class CategoryController {
 
     private final CategoryService categoryService;
-
     private final AdminService adminService;
-
-    private CategoryDto categoryDto;
-
-    private AdminDto adminDto;
-
-    private RedirectAttributes redirectAttributes;
 
     public CategoryController(CategoryService categoryService, AdminService adminService) {
         this.categoryService = categoryService;
-        this.adminService =  adminService;
-        categoryDto=new CategoryDto();
-        adminDto= adminService.getAdminById(1L);
+        this.adminService = adminService;
     }
 
-    // Show the form page
-    @GetMapping()
+    @GetMapping
     public String showForm(Model model) {
         model.addAttribute("content", "category");
         model.addAttribute("category", new CategoryDto());
         return "layout";
     }
 
-    // Handle form submission
-
-
-
     @PostMapping
-    public String save() {
+    public String save(@ModelAttribute CategoryDto categoryDto, RedirectAttributes redirectAttributes) {
+        AdminDto adminDto = adminService.getAdminById(1L); // fetch here, not in constructor
         categoryDto.setAdminDto(adminDto);
+
         boolean saved = categoryService.save(categoryDto);
         if (saved) {
             redirectAttributes.addFlashAttribute("message", "✅ Expense saved successfully!");
@@ -65,7 +53,4 @@ public class CategoryController {
     public String root() {
         return "redirect:/index";
     }
-
-
-
 }
